@@ -14788,6 +14788,12 @@ class App {
     update();
   }
 
+  /// @brief Access the current render buffer.
+  /// Useful for custom rendering or direct widget manipulation outside the main
+  /// render cycle. Only valid after App::run() starts and returns a reference to
+  /// the shared screen buffer used by all widgets during layout/render.
+  Buffer& current_buffer() { return current_buffer_; }
+
   static void update_screen_size(int w, int h = 0) {
     if (w < 80)
       g_screen_size = ScreenSize::Small;
