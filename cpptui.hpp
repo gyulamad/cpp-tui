@@ -12470,7 +12470,7 @@ class SplitPane : public Container {
         } else {
           ratio = (double)(event.y - y) / height;
         }
-        ratio = std::max(0.1, std::min(0.9, ratio));
+        ratio = std::max(.0, std::min(1.0, ratio));
         layout();
         return true;
       }
