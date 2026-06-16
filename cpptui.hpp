@@ -29,8 +29,6 @@
 #include <sstream>
 #include <string>
 #include <vector>
-#include <thread>
-
 
 namespace cpptui {
 
@@ -14906,7 +14904,7 @@ class App {
         }
         if (!callbacks.empty()) {
           for (auto &cb : callbacks) {
-            if (cb) { cb(); std::this_thread::sleep_for(std::chrono::milliseconds(5)); }
+            if (cb) cb();
           }
           needs_render = true;
         }
